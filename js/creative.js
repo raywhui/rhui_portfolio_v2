@@ -41,7 +41,22 @@
 
   // Scroll reveal calls
   window.sr = ScrollReveal();
-  sr.reveal('hr', {
+  sr.reveal('.title-hr', {
+    duration: 600,
+    scale: 0.1,
+    distance: '0px'
+  }, 200);  
+  sr.reveal('.name-hr', {
+    duration: 600,
+    scale: 0.1,
+    distance: '0px'
+  }, 200);  
+  sr.reveal('.what-i-do-hr', {
+    duration: 600,
+    scale: 0.1,
+    distance: '0px'
+  }, 200);  
+  sr.reveal('.contact-hr', {
     duration: 600,
     scale: 0.1,
     distance: '0px'
@@ -51,11 +66,16 @@
     scale: 0.3,
     distance: '0px'
   }, 200);
+    sr.reveal('.sr-icons-tools', {
+    duration: 600,
+    scale: 0.3,
+    distance: '0px'
+  }, 200);
   sr.reveal('.sr-button', {
     duration: 1000,
     delay: 200
   });  
-  sr.reveal('.portfolio-box', {
+  sr.reveal('.portfolio-col', {
     duration: 1000
   }, 100);
   sr.reveal('.sr-contact', {
