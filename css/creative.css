@@ -302,8 +302,8 @@ header.masthead p {
   }
 }
 
-.portfolio-box:hover #carouselExampleControls .carousel-control-prev,
-.portfolio-box:hover #carouselExampleControls .carousel-control-next {
+.portfolio-box:hover .carousel-control-prev,
+.portfolio-box:hover .carousel-control-next {
   background-color: #4DB6AC !important;
 }
 

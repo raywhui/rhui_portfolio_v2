@@ -55,8 +55,8 @@
         transition: height 0.25s ease-out, opacity 0.25s ease-out 0.25s;
       }
     }
-    #carouselExampleControls .carousel-control-prev, 
-    #carouselExampleControls .carousel-control-next {
+    .carousel-control-prev, 
+    .carousel-control-next {
       background-color: $primary !important;
     }
   }
@@ -107,6 +107,3 @@
     max-width: 1140px; //Width of container
   }
 }
-
-
-// height 10rem
