@@ -22,6 +22,12 @@ hr.light {
   border-color: $white;
 }
 
+hr.portfolio{
+  max-width: 100%;
+  border-width: 3px;
+  margin: 0 15px;
+}
+
 a {
   color: $primary;
   @include transition-all;

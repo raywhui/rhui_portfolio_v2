@@ -21,6 +21,12 @@ hr.light {
   border-color: #fff;
 }
 
+hr.portfolio {
+  max-width: 100%;
+  border-width: 3px;
+  margin: 0 15px;
+}
+
 a {
   color: #4DB6AC;
   -webkit-transition: all 0.2s;
@@ -237,6 +243,7 @@ header.masthead p {
   display: block;
   max-width: 650px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .portfolio-box .portfolio-box-caption {
@@ -246,7 +253,6 @@ header.masthead p {
   width: 100%;
   height: 100%;
   text-align: center;
-  opacity: 0;
   color: #fff;
   background: rgba(77, 182, 172, 0.9);
   -webkit-transition: all 0.2s;
@@ -263,23 +269,42 @@ header.masthead p {
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-description {
   padding: 0 15px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-description {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-description {
+  display: none;
+  text-transform: none;
+  height: 0;
+  opacity: 0;
+  transition: height 0.25s ease-out 0.25s, opacity 0.25s ease-out;
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   font-size: 18px;
 }
 
-.portfolio-box:hover .portfolio-box-caption {
-  opacity: 1;
+@media (min-width: 768px) {
+  .portfolio-box:hover .portfolio-box-caption-content .project-description {
+    height: 125px;
+    opacity: 1;
+    transition: height 0.25s ease-out, opacity 0.25s ease-out 0.25s;
+  }
+}
+
+.portfolio-box:hover #carouselExampleControls .carousel-control-prev,
+.portfolio-box:hover #carouselExampleControls .carousel-control-next {
+  background-color: #4DB6AC !important;
 }
 
 .portfolio-box:focus {
@@ -287,11 +312,44 @@ header.masthead p {
 }
 
 @media (min-width: 768px) {
-  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-description {
     font-size: 16px;
   }
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 22px;
+  }
+}
+
+#portfolio .container {
+  max-width: 100%;
+}
+
+#portfolio .container .portfolio-box.portfolio-info {
+  height: 10rem;
+}
+
+@media (min-width: 576px) {
+  #portfolio .container {
+    max-width: 100%;
+  }
+  #portfolio .container .portfolio-box.portfolio-info {
+    height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  #portfolio .container {
+    max-width: 960px;
+  }
+  #portfolio .container .portfolio-box-caption-content .project-description {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  #portfolio .container {
+    max-width: 1140px;
   }
 }
 

@@ -4,6 +4,7 @@
   display: block;
   max-width: 650px;
   margin: 0 auto;
+  height:100%;
   .portfolio-box-caption {
     position: absolute;
     bottom: 0;
@@ -11,7 +12,6 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    opacity: 0;
     color: $white;
     background: fade-out($primary, .1);
     @include transition-all;
@@ -22,14 +22,24 @@
       transform: translateY(-50%);
       text-align: center;
       .project-category,
-      .project-name {
+      .project-name,
+      .project-description {
         padding: 0 15px;
         @include sans-serif-font;
       }
-      .project-category {
+      .project-category,
+      .project-description {
         font-size: 14px;
         font-weight: 600;
         text-transform: uppercase;
+      }
+      .project-description {
+        display: none;
+        text-transform: none;
+        height:0;
+        opacity:0;
+        //Delay when mouseleave
+        transition: height 0.25s ease-out 0.25s, opacity 0.25s ease-out;
       }
       .project-name {
         font-size: 18px;
@@ -37,8 +47,17 @@
     }
   }
   &:hover {
-    .portfolio-box-caption {
-      opacity: 1;
+    @media (min-width: 768px){
+      .portfolio-box-caption-content .project-description {
+        height: 125px;
+        opacity: 1;
+        //Delay when mouseenter
+        transition: height 0.25s ease-out, opacity 0.25s ease-out 0.25s;
+      }
+    }
+    #carouselExampleControls .carousel-control-prev, 
+    #carouselExampleControls .carousel-control-next {
+      background-color: $primary !important;
     }
   }
   &:focus {
@@ -47,7 +66,8 @@
   @media (min-width: 768px) {
     .portfolio-box-caption {
       .portfolio-box-caption-content {
-        .project-category {
+        .project-category,
+        .project-description {
           font-size: 16px;
         }
         .project-name {
@@ -57,3 +77,36 @@
     }
   }
 }
+
+#portfolio .container{
+  max-width: 100%;
+  .portfolio-box.portfolio-info{
+    height: 10rem;
+  }
+}
+@media (min-width: 576px){
+  #portfolio .container{
+    max-width: 100%; //Width of container-fluid
+    .portfolio-box.portfolio-info{
+      height: 100%;
+    }
+  }
+}
+@media (min-width: 992px){
+  #portfolio .container{
+    max-width: 960px; //Width of container
+    .portfolio-box-caption-content{
+      .project-description {
+        display: block;
+      }
+    }
+  }
+}
+@media (min-width: 1200px){
+  #portfolio .container{
+    max-width: 1140px; //Width of container
+  }
+}
+
+
+// height 10rem
