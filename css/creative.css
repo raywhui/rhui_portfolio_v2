@@ -90,6 +90,34 @@ img::-moz-selection {
   background: transparent;
 }
 
+.wrap {
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  animation: blinkTextCursor 750ms steps(44) infinite normal;
+}
+
+.wrap-dark {
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  animation: blinkTextCursorDark 750ms steps(44) infinite normal;
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes blinkTextCursorDark {
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
